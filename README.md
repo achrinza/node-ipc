@@ -14,7 +14,7 @@ A great solution for complex multiprocess **Neural Networking** in Node.JS
 
 #### for node <v14
 
-`npm install @achrinza/node-ipc@9.0.0`
+`npm install @achrinza/node-ipc@9`
 
 #### including v10 or greater into your code
 
