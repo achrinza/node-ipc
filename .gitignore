@@ -3,3 +3,4 @@
 /nbproject
 npm-debug.log
 node-ipc.cjs
+/coverage/

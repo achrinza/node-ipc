@@ -1,47 +1,30 @@
-Thanks for all the free pizza, and thanks to all the police that showed up to SWAT me. They were really nice fellas.
-
 node-ipc
 ================
-
-[![Sponsor RIAEvangelist to help development of node-ipc](https://img.shields.io/static/v1?label=Sponsor%20Me%20On%20Github&message=%E2%9D%A4&logo=GitHub&link=https://github.com/sponsors/RIAEvangelist)](https://github.com/sponsors/RIAEvangelist)
 
 *a nodejs module for local and remote Inter Process Communication* with full support for Linux, Mac and Windows. It also supports all forms of socket communication from low level unix and windows sockets to UDP and secure TLS and TCP sockets.
 
 A great solution for complex multiprocess **Neural Networking** in Node.JS
 
-`npm install node-ipc`
+`npm install @fork-maintenance/node-ipc`
 
 #### for node <v14
 
-`npm install node-ipc@^9.0.0`
+`npm install @fork-maintenance/node-ipc@9.0.0`
 
 #### including v10 or greater into your code
 
 ```js
 
 //es6
-import ipc from 'node-ipc'
+import ipc from '@fork-maintenance/node-ipc'
 
 //commonjs
-const ipc = require('node-ipc').default;	   
+const ipc = require('@fork-maintenance/node-ipc').default;	   
 		 
 ```
 
 #### NPM Stats
 
-npm info :  [See npm trends and stats for node-ipc](http://npm-stat.com/charts.html?package=node-ipc&author=&from=&to=)   
-[![NPM](https://nodei.co/npm/node-ipc.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/node-ipc/)
-[![Package Quality](http://npm.packagequality.com/badge/node-ipc.png)](http://packagequality.com/#?package=node-ipc)  
-![node-ipc npm version](https://img.shields.io/npm/v/node-ipc.svg) ![supported node version for node-ipc](https://img.shields.io/node/v/node-ipc.svg) ![total npm downloads for node-ipc](https://img.shields.io/npm/dt/node-ipc.svg) ![monthly npm downloads for node-ipc](https://img.shields.io/npm/dm/node-ipc.svg) ![npm licence for node-ipc](https://img.shields.io/npm/l/node-ipc.svg) 
-
-GitHub info :  
-![node-ipc GitHub Release](https://img.shields.io/github/release/RIAEvangelist/node-ipc.svg) ![GitHub license node-ipc license](https://img.shields.io/github/license/RIAEvangelist/node-ipc.svg) ![open issues for node-ipc on GitHub](https://img.shields.io/github/issues/RIAEvangelist/node-ipc.svg)
-
-Code Coverage Info :  
-![lcov node-ipc](/coverage/lcov.svg)  
-Run `npm run coverage` to host a local version of the coverage report on [localhost:8080](http://localhost:8080) This is the same format as Istanbul and NYC. It should be very familiar.
-
-Testing done with [vanilla-test](https://github.com/RIAEvangelist/vanilla-test)  
 `vanilla-test` integrates with [c8](https://github.com/bcoe/c8) for native ESM coverage without the need to transpile your code. At the time of writing, this is the only way to natively test ESM, and it is amazing!
 
 Package details websites :
@@ -511,7 +494,7 @@ Sometimes you might need explicit and independent instances of node-ipc. Just fo
 
 ```javascript
 
-    import {IPCModule} from 'node-ipc';
+    import {IPCModule} from '@fork-maintenance/node-ipc';
 
     const ipc=new RawIPC;
     const someOtherExplicitIPC=new RawIPC;
@@ -519,7 +502,7 @@ Sometimes you might need explicit and independent instances of node-ipc. Just fo
 
     //OR
 
-    const ipc=from 'node-ipc');
+    const ipc=from '@fork-maintenance/node-ipc');
     const someOtherExplicitIPC=new ipc.IPC;
 
 
@@ -547,7 +530,7 @@ The server is the process keeping a socket for IPC open. Multiple sockets can co
 
 ```javascript
 
-    import ipc from 'node-ipc';
+    import ipc from '@fork-maintenance/node-ipc';
 
     ipc.config.id   = 'world';
     ipc.config.retry= 1500;
@@ -584,7 +567,7 @@ The client connects to the servers socket for Inter Process Communication. The s
 
 ```javascript
 
-    import ipc from 'node-ipc';
+    import ipc from '@fork-maintenance/node-ipc';
 
     ipc.config.id   = 'hello';
     ipc.config.retry= 1500;
@@ -630,7 +613,7 @@ This is the most basic example which will work for both local and remote UDP Soc
 
 ```javascript
 
-    import ipc from 'node-ipc';
+    import ipc from '@fork-maintenance/node-ipc';
 
     ipc.config.id   = 'world';
     ipc.config.retry= 1500;
@@ -826,7 +809,7 @@ Writing explicit buffers, int types, doubles, floats etc. as well as big endian 
 ```javascript
 
     import fs  from 'fs';
-    import ipc from 'node-ipc';
+    import ipc from '@fork-maintenance/node-ipc';
     import {cpus}  from 'os';
     import cluster  from 'cluster';
     
@@ -868,7 +851,7 @@ Writing explicit buffers, int types, doubles, floats etc. as well as big endian 
 ```javascript
 
     import fs  from 'fs';
-    import ipc  from 'node-ipc';
+    import ipc  from '@fork-maintenance/node-ipc';
 
     const socketPath = '/tmp/ipc.sock';
 
