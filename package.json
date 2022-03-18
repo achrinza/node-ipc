@@ -55,10 +55,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/RIAEvangelist/node-ipc.git"
+    "url": "https://github.com/achrinza/node-ipc.git"
   },
   "bugs": {
-    "url": "https://github.com/RIAEvangelist/node-ipc/issues"
+    "url": "https://github.com/achrinza/node-ipc/issues"
   },
-  "homepage": "http://riaevangelist.github.io/node-ipc/"
+  "homepage": "https://github.com/achrinza/node-ipc"
 }
