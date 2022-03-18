@@ -2,3 +2,5 @@
 /node_modules/
 /nbproject
 npm-debug.log
+node-ipc.cjs
+/spec/coverage/
