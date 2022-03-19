@@ -6,6 +6,8 @@
 >
 > See https://github.com/achrinza/node-ipc/issues/1 for more details.
 
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
+
 _a nodejs module for local and remote Inter Process Communication_ with full support for Linux, Mac and Windows. It also supports all forms of socket communication from low level unix and windows sockets to UDP and secure TLS and TCP sockets.
 
 A great solution for complex multiprocess **Neural Networking** in Node.JS
@@ -28,7 +30,7 @@ const ipc = require("@achrinza/node-ipc").default;
 
 #### Older versions of node
 
-the latest versions of `node-ipc` may work with the --harmony flag. Officially though, we support node v4 and newer with es5 and es6
+the latest versions of `@achrinza/node-ipc` may work with the --harmony flag. Officially though, we support node v4 and newer with es5 and es6
 
 #### Testing
 
@@ -713,7 +715,7 @@ ipc.server.emit(myBuffer);
 
 #### Server with the `cluster` Module
 
-`node-ipc` can be used with Node.js' [cluster module](https://nodejs.org/api/cluster.html) to provide the ability to have multiple readers for a single socket. Doing so simply requires you to set the `unlink` property in the config to `false` and take care of unlinking the socket path in the master process:
+`@achrinza/node-ipc` can be used with Node.js' [cluster module](https://nodejs.org/api/cluster.html) to provide the ability to have multiple readers for a single socket. Doing so simply requires you to set the `unlink` property in the config to `false` and take care of unlinking the socket path in the master process:
 
 ##### Server
 
