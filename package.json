@@ -16,8 +16,9 @@
   },
   "devDependencies": {
     "codacy-coverage": "2.0.0",
-    "jasmine": "2.4.1",
     "istanbul": "0.4.1",
+    "jasmine": "2.4.1",
+    "lockfile-lint": "^4.7.4",
     "node-cmd": "2.0.0"
   },
   "scripts": {
