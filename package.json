@@ -21,7 +21,7 @@
   "dependencies": {
     "event-pubsub": "5.0.3",
     "js-message": "1.0.7",
-    "js-queue": "2.0.2",
+    "@node-ipc/js-queue": "2.0.3",
     "strong-type": "^1.0.1"
   },
   "devDependencies": {
