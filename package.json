@@ -12,7 +12,7 @@
   "dependencies": {
     "event-pubsub": "4.3.0",
     "js-message": "1.0.7",
-    "js-queue": "2.0.2"
+    "@node-ipc/js-queue": "2.0.3"
   },
   "devDependencies": {
     "codacy-coverage": "2.0.0",
