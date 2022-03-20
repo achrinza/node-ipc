@@ -25,12 +25,13 @@
     "strong-type": "^1.0.1"
   },
   "devDependencies": {
+    "@node-ipc/vanilla-test": "1.4.9",
     "c8": "^7.7.3",
     "esbuild": "^0.12.28",
     "lcov2badge": "^0.1.2",
+    "lockfile-lint": "^4.7.4",
     "node-cmd": "4.0.0",
-    "node-http-server": "^8.1.4",
-    "@node-ipc/vanilla-test": "1.4.9"
+    "node-http-server": "^8.1.4"
   },
   "scripts": {
     "prepare": "esbuild node-ipc.js --bundle --format=cjs --target=es2018 --platform=node --outfile=node-ipc.cjs",
