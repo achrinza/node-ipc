@@ -38,3 +38,25 @@ jobs:
     - name: Run Tests (Windows)
       if: matrix.os == 'windows-latest'
       run: npm run-script test-windows --ignore-scripts
+  code-lint:
+    name: Code Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 16
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16 # LTS
+      - name: Install Dependencies
+        run: npm ci --ignore-scripts
+      - name: Lockfile Lint
+        run: |
+          npm exec \
+            --no-install \
+            --package=lockfile-lint \
+            -- \
+            lockfile-lint \
+              --allowed-hosts=npm \
+              --path=./package-lock.json \
+              --validate-https \
+              --validate-package-names
