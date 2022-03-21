@@ -7,6 +7,7 @@
 > See https://github.com/achrinza/node-ipc/issues/1 for more details.
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
+[![Coverage Status](https://coveralls.io/repos/github/achrinza/node-ipc/badge.svg?branch=main)](https://coveralls.io/github/achrinza/node-ipc?branch=main)
 
 _a nodejs module for local and remote Inter Process Communication_ with full support for Linux, Mac and Windows. It also supports all forms of socket communication from low level unix and windows sockets to UDP and secure TLS and TCP sockets.
 

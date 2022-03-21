@@ -7,7 +7,7 @@ on:
     branches: [ v9 ]
 
 jobs:
-  build:
+  test:
     name: Test
     runs-on: ${{ matrix.os }}
     strategy:
@@ -38,6 +38,11 @@ jobs:
     - name: Run Tests (Windows)
       if: matrix.os == 'windows-latest'
       run: npm run-script test-windows
+    - name: Publish Coverage
+      if: matrix.os == 'ubuntu-latest' && matrix.node-version == 16 # LTS
+      uses: coverallsapp/github-action@9ba913c152ae4be1327bfb9085dc806cedb44057
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
   code-lint:
     name: Code Lint
     runs-on: ubuntu-latest

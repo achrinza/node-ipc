@@ -10,26 +10,21 @@
     "node": "8 || 10 || 12 || 14 || 16 || 17"
   },
   "dependencies": {
+    "@node-ipc/js-queue": "2.0.3",
     "event-pubsub": "4.3.0",
-    "js-message": "1.0.7",
-    "@node-ipc/js-queue": "2.0.3"
+    "js-message": "1.0.7"
   },
   "devDependencies": {
-    "codacy-coverage": "2.0.0",
     "istanbul": "0.4.1",
     "jasmine": "2.4.1",
     "lockfile-lint": "^4.7.4",
     "node-cmd": "2.0.0"
   },
   "scripts": {
-    "test-windows": "istanbul cover -x **/spec/** -dir ./spec/coverage ./node_modules/jasmine/bin/jasmine.js",
-    "test": "istanbul cover -x **/spec/** -dir ./spec/coverage jasmine",
-    "cover": "istanbul cover -x **/spec/** -dir ./spec/coverage jasmine",
-    "coverup": "cat ./spec/coverage/lcov.info | codacy-coverage"
+    "istanbul": "istanbul cover -x ./spec/**",
+    "test-windows": "npm run-script istanbul -- ./node_modules/jasmine/bin/jasmine.js",
+    "test": "npm run-script istanbul -- jasmine"
   },
-  "pre-commit": [
-    "cover"
-  ],
   "keywords": [
     "IPC",
     "Neural Networking",
@@ -61,5 +56,11 @@
   "bugs": {
     "url": "https://github.com/achrinza/node-ipc/issues"
   },
+  "files": [
+    "dao",
+    "entities",
+    "local-node-ipc-certs",
+    "services"
+  ],
   "homepage": "https://github.com/achrinza/node-ipc"
 }
