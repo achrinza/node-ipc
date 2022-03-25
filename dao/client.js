@@ -4,7 +4,7 @@ import EventParser from '../entities/EventParser.js';
 import Message from 'js-message';
 import fs from 'fs';
 import Queue from '@node-ipc/js-queue';
-import Events from 'event-pubsub';
+import Events from '@achrinza/event-pubsub';
 
 let eventParser = new EventParser();
 

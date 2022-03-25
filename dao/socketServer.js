@@ -5,7 +5,7 @@ import fs from 'fs';
 import dgram from 'dgram';
 import EventParser from '../entities/EventParser.js';
 import Message from 'js-message';
-import Events from 'event-pubsub';
+import Events from '@achrinza/event-pubsub';
 
 let eventParser = new EventParser();
 
