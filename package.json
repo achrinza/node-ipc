@@ -19,10 +19,10 @@
     "node": "14 || 16 || 17"
   },
   "dependencies": {
-    "event-pubsub": "5.0.3",
+    "@achrinza/event-pubsub": "5.0.5",
     "js-message": "1.0.7",
     "@node-ipc/js-queue": "2.0.3",
-    "strong-type": "^1.0.1"
+    "strong-type": "1.0.1"
   },
   "devDependencies": {
     "@node-ipc/vanilla-test": "1.4.9",
