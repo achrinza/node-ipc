@@ -10,6 +10,7 @@ jobs:
   test:
     name: Test
     runs-on: ${{ matrix.os }}
+    needs: code-lint
     strategy:
       fail-fast: false
       matrix:
@@ -19,9 +20,13 @@ jobs:
           - windows-latest
         node-version:
           - 8
+          - 9
           - 10
+          - 11
           - 12
+          - 13
           - 14
+          - 15
           - 16
           - 17
     steps:
@@ -31,7 +36,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Install Dependencies
+      if: matrix.node-version != 9
       run: npm ci --ignore-scripts
+    - name: Install Dependencies (Node.js v9)
+      if: matrix.node-version == 9
+      run: npm install
     - name: Run Tests
       if: matrix.os != 'windows-latest'
       run: npm test
