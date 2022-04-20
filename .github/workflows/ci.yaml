@@ -29,6 +29,7 @@ jobs:
           - 15
           - 16
           - 17
+          - 18
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
