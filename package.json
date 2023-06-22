@@ -19,13 +19,13 @@
     "node": "14 || 16 || 17 || 18 || 19 || 20"
   },
   "dependencies": {
-    "@achrinza/event-pubsub": "5.0.8",
+    "@achrinza/event-pubsub": "5.0.9",
     "@node-ipc/js-queue": "2.0.3",
     "js-message": "1.0.7",
     "strong-type": "1.0.1"
   },
   "devDependencies": {
-    "@node-ipc/vanilla-test": "1.4.12",
+    "@node-ipc/vanilla-test": "1.4.13",
     "c8": "^7.7.3",
     "esbuild": "^0.12.28",
     "lcov2badge": "^0.1.2",
