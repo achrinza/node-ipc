@@ -16,16 +16,16 @@
     "access": "public"
   },
   "engines": {
-    "node": "14 || 16 || 17 || 18 || 19 || 20"
+    "node": "14 || 16 || 17 || 18 || 19 || 20 || 21"
   },
   "dependencies": {
     "@achrinza/event-pubsub": "5.0.9",
+    "@achrinza/strong-type": "1.1.8",
     "@node-ipc/js-queue": "2.0.3",
-    "js-message": "1.0.7",
-    "strong-type": "1.0.1"
+    "js-message": "1.0.7"
   },
   "devDependencies": {
-    "@node-ipc/vanilla-test": "1.4.13",
+    "@node-ipc/vanilla-test": "1.4.14",
     "c8": "^7.7.3",
     "esbuild": "^0.12.28",
     "lcov2badge": "^0.1.2",

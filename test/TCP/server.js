@@ -1,5 +1,5 @@
 import VanillaTest from '@node-ipc/vanilla-test';
-import Is from 'strong-type';
+import Is from '@achrinza/strong-type';
 import {IPCModule}   from '../../node-ipc.js';
 import delay from '../../helpers/delay.js';
 
