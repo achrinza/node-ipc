@@ -22,14 +22,14 @@
     "@achrinza/event-pubsub": "5.0.10",
     "@achrinza/strong-type": "1.1.8",
     "@node-ipc/js-queue": "2.0.3",
-    "js-message": "1.0.7"
+    "js-message": "2.1.0"
   },
   "devDependencies": {
     "@node-ipc/vanilla-test": "1.4.14",
-    "c8": "^8.0.1",
-    "esbuild": "^0.19.10",
+    "c8": "^9.1.0",
+    "esbuild": "^0.20.2",
     "lcov2badge": "^0.1.2",
-    "lockfile-lint": "^4.12.1",
+    "lockfile-lint": "^4.13.2",
     "node-cmd": "5.0.0",
     "node-http-server": "^8.1.5"
   },
