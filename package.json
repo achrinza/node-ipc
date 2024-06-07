@@ -26,8 +26,8 @@
   },
   "devDependencies": {
     "@node-ipc/vanilla-test": "1.4.15",
-    "c8": "^7.7.3",
-    "esbuild": "^0.12.28",
+    "c8": "^9.1.0",
+    "esbuild": "^0.21.4",
     "lcov2badge": "^0.1.2",
     "lockfile-lint": "^4.13.2",
     "node-cmd": "5.0.0",
