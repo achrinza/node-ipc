@@ -4,3 +4,8 @@
 npm-debug.log
 node-ipc.cjs
 /coverage/
+
+# Code editors
+\#*#
+.#*
+*~
