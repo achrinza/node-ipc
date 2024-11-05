@@ -15,15 +15,21 @@
     "js-message": "1.0.7"
   },
   "devDependencies": {
+    "conventional-changelog-cli": "^5.0.0",
+    "conventional-recommended-bump": "^10.0.0",
     "istanbul": "0.4.1",
     "jasmine": "2.4.1",
     "lockfile-lint": "^4.7.4",
     "node-cmd": "2.0.0"
   },
   "scripts": {
+    "ci": "npm ci",
+    "version": "npm version --no-git-tag-version \"$(npm exec --no --package=conventional-recommended-bump -- conventional-recommended-bump -p  conventionalcommits)\"",
+    "postversion": "npm run changelog",
+    "changelog": "npm exec --no --package=conventional-changelog-cli -- conventional-changelog -sr 0 -i CHANGELOG.md",
     "istanbul": "istanbul cover -x ./spec/**",
-    "test-windows": "npm run-script istanbul -- ./node_modules/jasmine/bin/jasmine.js",
-    "test": "npm run-script istanbul -- jasmine"
+    "test-windows": "npm run istanbul -- ./node_modules/jasmine/bin/jasmine.js",
+    "test": "npm run istanbul -- jasmine"
   },
   "keywords": [
     "IPC",

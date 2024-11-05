@@ -1,0 +1,70 @@
+name: CD
+
+on:
+  push:
+  workflow_dispatch:
+  
+permissions: {}
+
+jobs:
+  test:
+    name: Test
+    uses: ./.github/workflows/ci.yaml
+  build:
+    name: Build
+    needs: test
+    permissions:
+      id-token: write
+      contents: read
+      actions: read
+    # Do not pin to hash
+    # See: https://github.com/slsa-framework/slsa-verifier/issues/12
+    uses: slsa-framework/slsa-github-generator/.github/workflows/builder_nodejs_slsa3.yml@v2.0.0
+    with:
+      node-version: 22
+      run-scripts: ci, test
+  publish:
+    name: Publish
+    runs-on: ubuntu-24.04
+    needs: [build]
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@91182cccc01eb5e619899d80e4e971d6181294a7 # v2.10.1
+        with:
+          egress-policy: audit
+      - name: Download Tarball
+        uses: slsa-framework/slsa-github-generator/actions/nodejs/secure-package-download@v2.0.0
+        with:
+          name: ${{ needs.build.outputs.package-download-name }}
+          path: ${{ needs.build.outputs.package-name }}
+          sha256: ${{ needs.build.outputs.package-download-sha256 }}
+      - name: Download Provenance
+        uses: slsa-framework/slsa-github-generator/actions/nodejs/secure-attestations-download@v2.0.0
+        with:
+          name: ${{ needs.build.outputs.provenance-download-name }}
+          path: attestations
+          sha256: ${{ needs.build.outputs.provenance-download-sha256 }}
+      - name: Publish Dry-Run
+        env:
+          TARBALL_PATH: ${{ needs.build.outputs.package-name }}
+        run: npm publish --dry-run "$TARBALL_PATH"
+      - name: Request for NPM 2FA Code
+        uses: step-security/wait-for-secrets@5809f7d044804a5a1d43217fa8f3e855939fc9ef # v1.2.0
+        with:
+          secrets: |
+            npm-otp:
+              name: NPM Registry OTP
+              description: NPM Registry TOTP code for `achrinza-bot` NPM account
+      - name: Publish Package
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          TARBALL_PATH: ${{ needs.build.outputs.package-name }}
+          PROVENANCE_PATH: ./attestations/${{ needs.build.outputs.provenance-name }}
+        run: |
+          npm publish \
+            --access=public \
+            --provenance-file="$PROVENANCE_PATH" \
+            "$TARBALL_PATH"

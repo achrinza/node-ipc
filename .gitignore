@@ -3,4 +3,9 @@
 /nbproject
 npm-debug.log
 node-ipc.cjs
-/spec/coverage/
+/coverage/
+
+# Code editors
+\#*#
+.#*
+*~
